@@ -38,7 +38,7 @@ let opponentWinsCount = 0;
 let drawsCount = 0;
 
 
-let ws = new WebSocket("backend-tic-tac-toe.up.railway.app/ws");
+let ws = new WebSocket("https://backend-tic-tac-toe.up.railway.app/ws");
 
 ws.onmessage = message => {
   const response = JSON.parse(message.data);
