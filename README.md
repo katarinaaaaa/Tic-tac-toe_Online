@@ -1,5 +1,5 @@
 # Online tic-tac-toe game
-Simple web application using WebSocket, python + FastAPI for backend, vanilla JS for frontend and PostgreSQL for storing game statistics. 
+Simple web application using python + FastAPI for backend, vanilla JS for frontend, WebSockets for client-server communication and PostgreSQL for storing game statistics. 
 Application was originaly developed to be deployed on the [Railway](https://railway.app) platform.
 
 <img src="https://github.com/user-attachments/assets/ee11304b-a62d-4c23-8dfa-cef36e6ecac1" width="49%">
