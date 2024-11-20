@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Tic-Tac-Toe</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+</head>
+
+<body>
+  <div class="title">Tic-Tac-Toe</div>
+
+  <div class="login_name">
+    <div class="input_div">
+      <label class="username_label" for="username">Input username</label>
+      <input class="username_input" placeholder="Username" id="username"></input>
+    </div>
+    <div class="button_group next">
+      <button type="button" class="button_random">Play with a random player</button>
+      <button type="button" class="button_rooms">Play with a friend</button>
+    </div>
+    <button type="button" class="button_leaderboard">View the leaderboard</button>
+  </div>
+
+  <div class="login_room off">
+    <div class="input_div">
+      <label class="room_label" for="room">Input room name</label>
+      <input class="room_input" placeholder="Room name" id="room"></input>
+    </div>
+    <div class="button_group room">
+      <button type="button" class="button_create">Create a new room</button>
+      <button type="button" class="button_join">Join the existing room</button>
+    </div>
+  </div>
+
+  <div class="game off">
+    <div class="game_main">
+
+      <div class="text">waiting opponent...</div>
+      <div class="board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+
+    <div class="game_data">
+      <div class="info">
+        <div class="info_user">
+          <div class="info_user_name game_text">you: </div>
+          <div class="info_user_plays game_text">now play with: </div>
+        </div>
+        <div class="info_opponent">
+          <div class="info_opponent_name game_text">opponent: </div>
+          <div class="info_opponent_plays game_text">now plays with: </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="user_wins game_text"></div>
+        <div class="opponent_wins game_text"></div>
+        <div class="draws game_text"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="leaderboard off">
+    <div class="leaderboard_title">Leaderboard</div>
+    <div class="leaderboard_no_info off">No information available</div>
+    <table class="leaderboard_table"></table>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

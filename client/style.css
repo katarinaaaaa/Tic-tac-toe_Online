@@ -1,0 +1,316 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: #c2a1f0;
+}
+
+.title {
+    position: absolute;
+    top: 5vmin;
+    justify-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22vmin;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #f0ede1;
+    white-space: nowrap;
+}
+
+.login_name {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    position: absolute;
+    top: 35vmin;
+}
+
+.login_room {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    position: absolute;
+    top: 52vmin;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vmin;
+    font-weight: bold;
+    color: #f0ede1;
+    justify-self: start;
+}
+
+input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vmin;
+    width: 40vw;
+    color: #313131;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 0.375rem 0.75rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-top: 1vh;
+    margin-bottom: 6vh;
+}
+.invalid_input {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 4vmin 4vmin;
+}
+
+input::placeholder {
+    color: #212529;
+    opacity: 0.4;
+}
+
+.invalid_input::placeholder {
+    color: #da2436;
+}
+
+input:focus, .invalid_input:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+    background-image: none;
+}
+
+input:focus::placeholder, .invalid_input:focus::placeholder {
+    color: transparent;
+}
+
+.input_div {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 40vmin;
+    height: 14vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4.5vmin;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #f0ede1;
+    background: #941ee3;
+    cursor: pointer;
+    justify-self: center;
+}
+
+.button_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_rooms, .button_join {
+    margin-left: 2vw;
+}
+
+.button_leaderboard {
+    margin-top: 2vw;
+}
+
+.game {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.game_main {
+    justify-content: center;
+    align-items: center;
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    margin-bottom: 3vmin;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vmin;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #f0ede1;
+}
+
+.game_data {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    margin-left: 10vw;
+    margin-top: 10vh;
+    align-self: start;
+}
+
+.game_text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vmin;
+    font-weight: bold;
+    color: #f0ede1;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.info {
+    margin-bottom: 3vh;
+}
+
+.info_user_plays {
+    margin-bottom: 2vh;
+}
+
+.info_user_name, .info_user_plays {
+    color: #941ee3;
+}
+
+.user_wins, .opponent_wins, .draws {
+    color: #313131;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 20vmin);
+    grid-template-rows: repeat(3, 20vmin);
+    gap: 1.8vmin;
+    background-color: #941ee3;
+}
+
+.box {
+    height: 100vh;
+    width: 33vw;
+    position: fixed;
+    top: 0;
+    overflow-x: hidden;
+}
+
+.cell {
+    position: relative;
+    cursor: pointer;
+    background-color: #c2a1f0;
+}
+
+.cell.X:before,
+.cell.X:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15vmin;
+    height: 2vmin;
+    background: #313131;
+}
+
+.cell.X:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cell.X:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.cell.O:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9vmin;
+    height: 9vmin;
+    border-radius: 50%;
+    border: 2vmin solid #f0ede1;
+}
+
+.leaderboard {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    height: 100vh;
+}
+
+.leaderboard_no_info {
+    justify-self: center;
+    align-self: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7vmin;
+    font-weight: bold;
+    color: #941ee3;
+}
+
+.leaderboard_title {
+    justify-self: center;
+    align-self: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #f0ede1;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    font-size: 15vmin;
+}
+
+.leaderboard_table {
+    align-self: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3.5vmin;
+    width: 95vw;
+    border: 15px solid #941ee3;
+	border-top: 5px solid #941ee3;
+	border-collapse: collapse; 
+    table-layout: fixed;
+}
+.leaderboard_table th {
+    padding: 6px 2px;
+    color: #f0ede1;
+    font-weight: bold;
+    background: #941ee3;
+	border: none;
+	border-bottom: 5px solid #941ee3;
+    text-align: center;
+}
+.leaderboard_table td {
+    padding: 5px 5px;
+	border: none;
+	border-bottom: 5px solid #941ee3;
+    border-left: 4px solid #941ee3;
+    background: #f0ede1;
+    color: #313131;
+    text-align: center;
+    max-width: 20vw;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.off {
+    display: none;
+}
+
+.reset {
+    cursor: wait;
+}
